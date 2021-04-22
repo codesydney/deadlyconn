@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="text-center" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>deadlyconn_form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container"><img src="assets/img/DC_Logo_No_Title.png" width="100" height="100"><a class="navbar-brand" href="index.html">Referral Management System</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mr-auto"></ul><span class="navbar-text actions"> <a class="login" href="login.html">Log In</a><a class="btn btn-light action-button" role="button" href="signup.html" style="background: var(--gray-dark);">Sign Up</a></span>
+            </div>
+        </div>
+    </nav>
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form >
+                        <div class="section1">
+                            <h2>Section 1 - Program Referral</h2><br>
+                            <p><input type="radio" id="families"> &nbsp;<label for="families">Deadly Families </label> &nbsp;&nbsp;&nbsp; <input type="radio" id="jargums">&nbsp; <label for="jargums">Deadly Jargums </label></p><br>
+                            <p><input type="radio" id="streetsmart">&nbsp; <label for="streetsmart">Street Smart Project </label>&nbsp;&nbsp;&nbsp;  <input type="radio" id="breakingcycle"> &nbsp;<label for="breakingcycle">Breaking The Cycle </label></p><br><br>
+                            <p>Other Information</p><br>
+                            <p><input type="radio" id ="referral">&nbsp; <label for="referral">Referral </label>&nbsp;&nbsp;&nbsp;  <input type="radio" id="jargums2">&nbsp; <label for="jargums2">Deadly Jargums </label></p><br>
+                            <p><input type="radio" id="advocacy"> &nbsp;<label for="advocacy">Advocacy </label> </p><br>
+                            <p><label for="notesreferral">Notes</label></p><br>
+                            <p><textarea  name="notesreferral" rows="5" cols="30"> Type in any other information.</textarea><br><br>
+                        </div>
+                        <div class="section2">
+                            <h2>Section 2 - Referral Source</h2><br>
+                            <p>Date of Referral &nbsp;<input type="text" id="datereferral"></p><br>
+                            <p>Name of Referrer&nbsp; <input type="text" id="namereferrer"></p><br>
+                            <p>Agency &nbsp;<input type="text" id="agency"></p><br>
+                            <p>Position &nbsp;<input type="text" id="position"></p><br>
+                            <p>Phone &nbsp;<input type="text" id="phone"></p><br>
+                            <p>Email &nbsp;<input type="text" id="email"></p><br>
+                            <p><input type="checkbox" id="progexpconfirm"> This confirm program has been explained to the client and consent to refer has been given by the client.</p><br><br>
+                        </div>
+                        <div class="section3">
+                            <h2>Section 3 - Participant Information</h2><br>
+                            <p>Name &nbsp; <input type="text" id="nameparticipant"></p><br>
+                            <p>Date Of Birth &nbsp; <input type="text" id="dateofbirth"></p><br>
+                            <p>Cultural Identity  &nbsp;<input type="text" id="culturalidentity"></p><br>
+                            <p>Gender  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Male &nbsp;<input type="radio" id="malegender">   &nbsp;&nbsp;   Female &nbsp;<input type="radio" id="femalegender">   &nbsp;&nbsp;  Other &nbsp;<input type="text" id="othergender"></p><br>
+                            <p>Address  &nbsp;<input type="text" id="address"></p><br>
+                            <p>Phone  &nbsp;<input type="text" id="phone"></p><br><br>
+                        </div>
+                        <div class="section4">
+                            <h2>Section 4 - Children (Jargums) Information</h2><br>
+                            <p>Name &nbsp; <input type="text" id="namechild">  &nbsp;&nbsp;&nbsp;  Date Of Birth  &nbsp;<input type="text" id="dobchild">  &nbsp;&nbsp;&nbsp;  Care Status  &nbsp;<input type="text" id="carestatus"></p><br>
+                            <p><button type="button" id="addchild">Add Child</button>  </p><br>               
+                            <p><label for="caseworkercontact">DCJ Caseworker/Office/Contact</label><br><textarea name="caseworkercontact" rows="5" cols="30"></textarea></p><br>
+                            <p><label for="referralreason">Reason for Referral (Mandatory)</label><br><textarea name="referralreason" rows="5" cols="30"></textarea></p><br><br>
+                        </div>
+                        <div class="section5">
+                            <h2>Section 5 - Support Needs</h2><br>
+                            <p><input type="radio" id="accommodation">&nbsp;<label for="accommodation">Accommodation</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="commconnect">&nbsp;<label for="commconnect">Community Connection</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="famsupport">&nbsp;<label for="famsupport">Family/Parenting Support</label></p><br>
+                            <p><input type="radio" id="mentoring">&nbsp;<label for="mentoring">Mentoring</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="advocacy">&nbsp;<label for="advocacy">Advocacy</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="counselling">&nbsp;<label for="counselling">Counselling</label></p><br>
+                            <p><input type="radio" id="finsupport">&nbsp;<label for="finsupport">Financial Support</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="prosocialact">&nbsp;<label for="prosocialact">Pro Social Activities</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="aod">&nbsp;<label for="aod">AOD</label></p><br>
+                            <p><input type="radio" id="cultsupport">&nbsp;<label for="cultsupport">Cultural Support</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="identific">&nbsp;<label for="identific">Identification</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="referral">&nbsp;<label for="referral">Referral (to other services)</label></p><br>
+                            <p><input type="radio" id="centrelink">&nbsp;<label for="centrelink">Centrelink</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="driverlic">&nbsp;<label for="driverlic">Driver's Licence</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="legal">&nbsp;<label for="legal">Legal</label></p><br>
+                            <p><input type="radio" id="training">&nbsp;<label for="training">Training</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="clothing">&nbsp;<label for="clothing">Clothing (Self or Kids)</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="education">&nbsp;<label for="education">Education</label></p><br>
+                            <p><input type="radio" id="parentingskills">&nbsp;<label for="parentingskills">Living/Parenting Skills</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="transport">&nbsp;<label for="transport">Transport</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="commcorrect">&nbsp;<label for="commcorrect">Comm Corrections</label></p><br>
+                            <p><input type="radio" id="employ">&nbsp;<label for="employ">Employment</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="mentalhealth">&nbsp;<label for="mentalhealth">Mental Health/Health</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="revwdo">&nbsp;<label for="revwdo">Revenue/WDO</label></p><br>
+                            <p><label for="others">Others (please specify):</label></p><br>
+                            <p><textarea name="others" rows="5" cols="30"></textarea></p><br><br>
+                        </div>
+                        <div class="section6">
+                            <h2>Section 6 - Justice Information</h2><br>
+                            <p><label>Currently in:&nbsp;&nbsp;</label><input type="radio" id="community">&nbsp;<label for="community">Community</label>&nbsp;&nbsp;&nbsp;<input type=radio id="custody">&nbsp;<label for="custody">Custody</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="sentenced">&nbsp;<label for="sentenced">Sentenced</label>&nbsp;&nbsp;&nbsp;<input type="radio" id="remand">&nbsp;<label for="remand">Remand</label></p><br>
+                            <p><label for="Periodincarceration">Period of incarceration (dates):</label>&nbsp;&nbsp;<input type=text id="releasedate"></p><br>
+                            <p><label for="releasedate">If In Custody, Expected Date Of Release:</label>&nbsp;&nbsp;<input type=text id="releasedate"></p><br>
+                            <p><label for="nextappdate">Date of next Court appearance:</label>&nbsp;&nbsp;<input type=text id="nextappdate"></p><br>
+                            <p><label>Seeking Bail?</label>&nbsp;&nbsp;<input type=radio id="bailseekyes">&nbsp;<label for="bailseekyes">Yes</label>&nbsp;&nbsp;<input type=radio id="bailseekno">&nbsp;<label for="bailseekno">No</label>&nbsp;&nbsp;&nbsp;<label for="minbail">MIN</label>&nbsp;&nbsp;<input type=text id="minbail"></p><br>
+                            <p><label for="location">Location:</label>&nbsp;&nbsp;<input type=text id="location"></p><br>
+                            <p><label>Type:</label>&nbsp;&nbsp;<input type=radio id="criminal">&nbsp;<label for="criminal">Criminal</label>&nbsp;&nbsp;<input type=radio id="family">&nbsp;<label for="family">Family</label></p><br>
+                            <p><label>Order Upon Release:</label>&nbsp;&nbsp;<input type=radio id="ordrelyes">&nbsp;<label for="ordrelyes">Yes</label>&nbsp;&nbsp;<input type=radio id="ordrelno">&nbsp;<label for="ordrelno">No</label></p><br>
+                            <p><label for="typeorder">Type Of Order:</label>&nbsp;&nbsp;<input type=text id="typeorder"></p><br>
+                            <p><label for="ccjjoff">Community Corrections/JJ Office:</label>&nbsp;&nbsp;<input type=text id="ccjjoff"></p><br>
+                            <p><label for="officer">Officer:</label>&nbsp;&nbsp;<input type=text id="officer"></p><br>
+                            <p><label for="bailcond">Bail Conditions (If Applicable):</label><br><textarea name="bailcond" rows="5" cols="30"></textarea></p><br>
+                            <p><label for="lawyerdet">Lawyer Details:</label><br><textarea name="lawyerdet" rows="5" cols="30"></textarea></p><br>
+                        </div>
+                        <div class="section7">
+                            <h2>Section 7 - Risk Factors</h2><br>
+                            <p>Are there any risk we should be aware of? (e.g. risks to staff or the community - ADVO) &nbsp;&nbsp;&nbsp;&nbsp;<input type=radio id="riskyes">&nbsp;&nbsp;<label for="riskyes">Yes</label>&nbsp;&nbsp;<input type=radio id="riskno">&nbsp;&nbsp;<label for="riskno">No</label></p><br>
+                            <p>If yes, please provide details:</p><br>
+                            <p><textarea name="riskfactors" rows="5" cols="30"></textarea></p><br><br>
+                        </div>
+                        <div class="section8">
+                            <h2>Section 8 - Agency Support</h2><br>
+                            <p><label>Are There Any Other Agencies Involved?</label> &nbsp;&nbsp;&nbsp;&nbsp; <input type=radio id="agsupyes"> &nbsp;&nbsp; <label for="agsupyes">Yes</label> &nbsp;&nbsp; <input type=radio id="agsupno"> &nbsp;&nbsp; <label for="agsupno">No</label> &nbsp;&nbsp;&nbsp;&nbsp; <label for="numagsup">How Many</label> &nbsp; <input type=text id="numagsup"></p><br>
+                            <p><label for="agencyname">Agency Name:</label>&nbsp;&nbsp;<input type=text id="agencyname"></p><br>
+                            <p><label for="keyworker">Key Worker Name:</label>&nbsp;&nbsp;<input type=text id="keyworker"></p><br>
+                            <p><label for="agencycontact">Contact Details:</label>&nbsp;&nbsp;<input type=text id="agencycontact"></p><br>
+                            <p><button type="button" id="moreagency">+ Add More Agency Details</button></p><br><br>
+                        </div>
+                        <div class="section9">
+                            <h2>Section 9 - Other Information</h2><br>
+                            <p><textarea name="otherinfo" rows="5" cols="30"></textarea></p><br><br>
+                        </div>
+                        <div class="section10">
+                            <h2>Section 10 - Supporting Documents</h2><br>
+                            <p><button type=button id="supportdoc">+ Attachments</button></p><br><br>
+                        </div>
+                        <div class="officeuse">
+                            <h2>OFFICE USE ONLY - Intake Outcome</h2><br>
+                            <p><label for="datetime">Date And Time:</label>&nbsp;&nbsp;<input type=text id="datetime"></p><br>
+                            <p><label>Client Rating</label>&nbsp;&nbsp;<input type=radio id="urgentrate">&nbsp;<label for="urgentrate">Urgent</label>&nbsp;&nbsp;<input type=radio id="highrate">&nbsp;<label for="highrate">Label</label>&nbsp;&nbsp;<input type=radio id="mediumrate">&nbsp;<label for="mediumrate">Medium</label>&nbsp;&nbsp;<input type=radio id="lowrate">&nbsp;<label for="lowrate">Low</label></p><br>
+                            <p><label>Previous Client</label>&nbsp;&nbsp;<input type=radio id="prevclientyes">&nbsp;<label for="prevclientyes">Yes</label>&nbsp;&nbsp;<input type=radio id="prevclientno">&nbsp;<label for="prevclientno">No</label></p><br>
+                            <p><label>Meets Eligibility Criteria</label>&nbsp;&nbsp;<input type=radio id="meeteligyes">&nbsp;<label for="meeteligyes">Yes</label>&nbsp;&nbsp;<input type=radio id="meeteligno">&nbsp;<label for="meeteligno">No</label></p><br>
+                            <p><label>In Catchment Area</label>&nbsp;&nbsp;<input type=radio id="catchareayes">&nbsp;<label for="catchareayes">Yes</label>&nbsp;&nbsp;<input type=radio id="catchareano">&nbsp;<label for="catchareano">No</label></p><br>
+                            <p><label>Accepted</label>&nbsp;&nbsp;<input type=radio id="acceptedyes">&nbsp;<label for="acceptedyes">Yes</label>&nbsp;&nbsp;<input type=radio id="acceptedno">&nbsp;<label for="acceptedno">No</label></p><br>
+                            <p><label for="allocatedto">Allocated to:</label>&nbsp;&nbsp;<input type=text id="allocatedto"></p><br>
+                            <p><label for="allocateddatetime">Allocation Date And Time:</label>&nbsp;&nbsp;<input type=text id="allocateddatetime"></p><br>
+                            <p><input type="checkbox" id="reffollowup">&nbsp;<label for="reffollowup">Follow up to referrer to advise of outcome</label></p><br>
+                            <p><input type="checkbox" id="nompernotif">&nbsp;<label for="nompernotif">Nominated person notified and given further information/advise</label></p><br><br>
+                            <p><label for="notaccepted">Not Accepted</label>&nbsp;&nbsp;&nbsp;&nbsp;<input type=radio id="notaccyes">&nbsp;<label for="notaccyes">Yes</label>&nbsp;&nbsp;<input type=radio id="notaccno">&nbsp;<label for="notaccno">No</label></p>
+                            <p><label for="notacceptedwhy">If No, Why</label>&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="notacceptedwhy"></textarea></p><br>
+                            <p><label for="furtherinfo">Further information required:</label>&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="furtherinfo"></textarea></p><br><br>
+                        </div> 
+                        <div><p><button type="submit" id="submit">SUBMIT</button></p></div> <br>  
+                    </form>                    </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-basic">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="login.html">Login</a></li>
+            <li class="list-inline-item"><a href="signup.html">Signup</a></li>
+       </ul>
+        <p class="copyright">Handcoded with&nbsp;<i class="fa fa-heart"></i>&nbsp;by Code.Sydney</p>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
