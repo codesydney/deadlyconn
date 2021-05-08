@@ -24,5 +24,5 @@
 
 ----
 ## Mock Backend APIs
-- [Mock API for Signup/Signin](https://www.javascript.sydney/dc-test-users)
-- [Mock API for Referral CRUD/Referral Listing](https://www.javascript.sydney/dc-test-referrals)
+- [Mock API for Signup/Signin](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/users)
+- [Mock API for Referral CRUD/Referral Listing](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/referrals)
