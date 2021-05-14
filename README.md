@@ -25,8 +25,8 @@
 
 ----
 ## Mock Backend APIs
-- [Mock API for Signup/Signin](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/users)
-- [Mock API for Referral CRUD/Referral Listing](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/referrals)
+- [Mock API for Users](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/users)
+- [Mock API for Referrals](https://60950ddf94009e00176b65e5.mockapi.io/api/v1/referrals)
 
 ----
 ## Staging Version
