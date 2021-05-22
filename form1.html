@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link href="style.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
     <title>Document</title>
 </head>
 <body>
@@ -16,25 +17,20 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
+              <div>
+                <ul class="nav justify-content-end">
+                    <!-- <span class="navbar-text actions"> <a class="login" href="index.html">Log In</a><a class="btn btn-light action-button btn-sm" role="button" href="index.html" style="background: var(--gray-dark);">Sign Up</a></span> -->
+                    <li class="nav-item">
+                      <a class="login" href="index.html" style="text-decoration: none;">Log In</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item">
+                      <a class="signup" href="index.html" style="text-decoration: none;">Sign Up</a>
+                    </li>
                 </ul>
               </div>
             </div>
           </nav>
-        
+          
     </header>
     <main class="referral_form_main ms-3">
         <form action="#" method="POST">
@@ -46,34 +42,40 @@
                     <label for="deadlyFamilies">Deadly Families</label>&nbsp;&nbsp;&nbsp;&nbsp;
                   
                     <input class="form" type="radio" name="referredProgram" id="deadlyJargums" value="deadlyJargums">
-                    <label for="deadlyJargums">Deadly Jargums</label>
-                  </div>
-                  <div class="form-check mb-3">
+                    <label for="deadlyJargums">Deadly Jargums</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <!-- </div>
+                  <div class="form-check mb-3"> -->
                     <input class="form" type="radio" name="referredProgram" id="streetSmartProject" value="streetSmartProject">
                     <label class="form-check-label" for="streetSmartProject">Street Smart Project</label>&nbsp;&nbsp;&nbsp;&nbsp;
                   
                     <input class="form" type="radio" name="referredProgram" id="breakingTheCycle" value="breakingTheCycle">
                     <label class="form-check-label" for="breakingTheCycle">Breaking The Cycle</label>
                   </div>
-
-                  <h5>Other Information</h5>
+                  <hr>
+                  <p style="margin-left:1.5rem;">Other Type: </p>
                  
                   <div class="form-check mb-3">
+                    <input class="form" type="radio" name="information" id="referral">
+                    <label for="referral">Information</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <input class="form" type="radio" name="referral" id="referral">
                     <label for="referral">Referral</label>&nbsp;&nbsp;&nbsp;&nbsp;
                   
                     <input class="form" type="radio" name="advocacy" id="advocacy">
-                    <label for="advocacy">Advocacy</label>
+                    <label for="advocacy">Advocacy</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <input class="form" type="radio" name="oneOfSupport" id="oneOfSupport">
+                    <label for="oneOfSupport">One Off Support</label>
                   </div>                  
-                  <div class="form-floating mb-3">
-                    <label for="notes_section_1">Notes</label>
-                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="notes_section_1"></textarea>                    
+                  <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="referralDetails" placeholder="Record Referral Details here:" id="referralDetails"></textarea> 
+                    <label for="referralDetails">Record any other information here:</label>                   
                   </div>              
             </div>
             <!-- section_1_end -->
             <!-- section_2_start -->
             <h4>Section 2 - Referral Source</h4>
-            <div class="section2 ms-3">               
+            <div class="section2 ms-3 mb-3">               
                 <div class="input-group mb-3 ms-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Date of Referral</span>
                     <input type="date" class="date_referral" aria-label="Referral Date" aria-describedby="inputGroup-sizing-default">
@@ -108,7 +110,7 @@
             <!-- section_2_end -->
             <!-- section_3_start -->
             <h4>Section 3 - Participant Information</h4>
-            <div class="section3 ms-3">
+            <div class="section3 ms-3 mb-3">
                 <div class="input-group mb-3 ms-3">
                     <span class="input-group-text" id="inputGroup-sizing-default">Name of Participant</span>
                     <input type="text" class="name_participant" aria-label="Participant Name" aria-describedby="inputGroup-sizing-default">
@@ -133,58 +135,370 @@
             <!-- section_3_end -->
             <!-- section_4_start -->
             <h4>Section 4 - Children (Jargums) Information</h4>
-            <div class="section4 ms-3">
-                <div class="input-group mb-3 ms-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Name of Child</span>
-                    <input type="text" class="name_child" aria-label="Child's Name" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="input-group mb-3 ms-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Date of Birth</span>
-                    <input type="date" class="dob_child" aria-label="Child's Date of Birth" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <div class="input-group mb-3 ms-3">
-                    <span class="input-group-text" id="inputGroup-sizing-default">Care Status</span>
-                    <input type="text" class="care_status_child" aria-label="Child's Status of Care" aria-describedby="inputGroup-sizing-default">
-                </div>
-                <button type="button" class="btn btn-outline-primary">Add Child</button>
-                <div class="form-floating mb-3 ms-3">
-                    <label for="notes_section_1">Notes</label>
-                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="notes_section_1"></textarea>                    
+            <div class="section4 ms-3 mb-3">
+                
+                <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="Child/Children Detail/s" placeholder="Leave a comment here" id="childrenDetails"></textarea> 
+                    <label for="childrenDetails">Enter Name/s of Child/Children, Date/s of Birth/s and Care Status/es:</label>                   
                 </div> 
-                <div class="form-floating mb-3 ms-3">
-                    <label for="notes_section_1">Notes</label>
-                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="notes_section_1"></textarea>                    
-                </div>     
-
+               
+                <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="DCJCaseworker/Office/Contact"></textarea> 
+                    <label for="DCJCaseworker/Office/Contact">DCJ Caseworker/Office/Contact:</label>                   
+                </div> 
+                <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="referralReasons"></textarea>
+                    <label for="referralReasons">Reason for Referral (Mandatory):</label>                    
+                </div>
             </div>
-
             <!-- section_4_end -->
             <!-- section_5_start -->
+            <h4>Section 5 - Children (Jargums) Information</h4>
+            <div class="section5 ms-3 mb-3">
+                <div class="form-check mb-3">
+                  <input class="form" type="checkbox" name="supportNeedsAccommodation" id="supportNeedsAccommodation" value="supportNeedsAccommodation">
+                  <label for="supportNeedsAccommodation">Accommodation</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                  <input class="form" type="checkbox" name="supportNeedsConnection" id="supportNeedsConnection" value="supportNeedsConnection">
+                  <label for="supportNeedsConnection">Community Connection</label>&nbsp;&nbsp;&nbsp;&nbsp;
 
+                  <input class="form" type="checkbox" name="supportNeedsFamilyParentingSupport" id="supportNeedsFamilyParentingSupport" value="supportNeedsFamilyParentingSupport">
+                  <label for="supportNeedsFamilyParentingSupport">Family/Parenting Support</label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form" type="checkbox" name="supportNeedsMentoring" id="supportNeedsMentoring" value="supportNeedsMentoring">
+                  <label class="form-check-label" for="supportNeedsMentoring">Mentoring</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                  <input class="form" type="checkbox" name="supportNeedsAdvocacy" id="breakingTheCycle" value="supportNeedsAdvocacy">
+                  <label class="form-check-label" for="supportNeedsAdvocacy">Advocacy</label>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input class="form" type="checkbox" name="supportNeedsCounselling" id="supportNeedsCounselling" value="supportNeedsCounselling">
+                  <label class="form-check-label" for="supportNeedsCounselling">Counselling</label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsFinancialSupport" id="supportNeedsFinancialSupport" value="supportNeedsFinancialSupport">
+                    <label class="form-check-label" for="supportNeedsFinancialSupport">Finanacial Support</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsProSocialActivities" id="supportNeedsProSocialActivities" value="supportNeedsProSocialActivities">
+                    <label class="form-check-label" for="supportNeedsProSocialActivities">Pro Social Activities</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsAOD" id="supportNeedsAOD" value="supportNeedsAOD">
+                    <label class="form-check-label" for="supportNeedsAOD">AOD</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsCulturalSupport" id="supportNeedsCulturalSupport" value="supportNeedsCulturalSupport">
+                    <label class="form-check-label" for="supportNeedsCulturalSupport">Cultural Support</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsIdentification" id="supportNeedsIdentification" value="supportNeedsIdentification">
+                    <label class="form-check-label" for="supportNeedsIdentification">Identification</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsRefOtherServices" id="supportNeedsRefOtherServices" value="supportNeedsRefOtherServices">
+                    <label class="form-check-label" for="supportNeedsRefOtherServices">Referral (to other services)</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsCentreLink" id="supportNeedsCentreLink" value="supportNeedsCentreLink">
+                    <label class="form-check-label" for="supportNeedsCentreLink">Centre Link</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsDriverLicence" id="supportNeedsDriverLicence" value="supportNeedsDriverLicence">
+                    <label class="form-check-label" for="supportNeedsDriverLicence">Driver's Licence</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsLegal" id="supportNeedsLegal" value="supportNeedsLegal">
+                    <label class="form-check-label" for="supportNeedsLegal">Legal</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsTraining" id="supportNeedsTraining" value="supportNeedsTraining">
+                    <label class="form-check-label" for="supportNeedsTraining">Training</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsClothing" id="supportNeedsClothing" value="supportNeedsClothing">
+                    <label class="form-check-label" for="supportNeedsClothing">Clothing (Self or Kids)</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsEducation" id="supportNeedsEducation" value="supportNeedsEducation">
+                    <label class="form-check-label" for="supportNeedsEducation">Education</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsLivingParentingSkills" id="supportNeedsLivingParentingSkills" value="supportNeedsLivingParentingSkills">
+                    <label class="form-check-label" for="supportNeedsLivingParentingSkills">Living/Parenting Skills</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsLivingTransport" id="supportNeedsLivingTransport" value="supportNeedsLivingTransport">
+                    <label class="form-check-label" for="supportNeedsLivingTransport">Transport</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsCommCorrections" id="supportNeedsCommCorrections" value="supportNeedsCommCorrections">
+                    <label class="form-check-label" for="supportNeedsCommCorrections">Comm Corrections</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsEmployment" id="supportNeedsEmployment" value="supportNeedsEmployment">
+                    <label class="form-check-label" for="supportNeedsEmployment">Employment</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsMentalHealth" id="supportNeedsMentalHealth" value="supportNeedsMentalHealth">
+                    <label class="form-check-label" for="supportNeedsMentalHealth">Mental Health/Health</label>&nbsp;&nbsp;&nbsp;&nbsp;
+  
+                    <input class="form" type="checkbox" name="supportNeedsRevenueWDO" id="supportNeedsRevenueWDO" value="supportNeedsRevenueWDO">
+                    <label class="form-check-label" for="supportNeedsRevenueWDO">Revenue/WDO</label>
+                  </div>
+                  <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="notes_section_1" placeholder="Leave a comment here" id="notes_section_1"></textarea> 
+                    <label for="notes_section_1">Others (please specify):</label>                   
+                </div>
+            </div>
             <!-- section_5_end -->
             <!-- section_6_start -->
-
+            <h4>Section 6 - Justice Information</h4>
+            <div class="section6 ms-3 mb-3"> 
+                <div class="form-check mb-3">
+                    <p>Currently in:</p>
+                    <input class="form" type="radio" name="JusticeInfo" id="JusticeInfoInCommunity" value="InCommunity">
+                    <label for="JusticeInfoInCommunity">Community</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="JusticeInfo" id="JusticeInfoInCustody" value="InCustody">
+                    <label for="JusticeInfoInCustody">Custody</label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form" type="radio" name="JusticeInfo" id="JusticeInfoSentenced" value="Sentenced">
+                    <label for="JusticeInfoSentenced">Sentenced</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="JusticeInfo" id="JusticeInfoInRemand" value="InRemand">
+                    <label for="JusticeInfoInRemand">Remand</label>
+                  </div>               
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Period of Incarceration (dates)</span>
+                    <input type="text" class="periodOfIncarceration" aria-label="Period of Incarceration" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">If in Custody, Expected Date of Release:</span>
+                    <input type="date" class="expectedDateOfRelease" aria-label="Date of Release" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date of Next Court Appearance</span>
+                    <input type="text" class="nextCourtAppearanceDate" aria-label="Agency of Referrer" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 ms-3">               
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <p>Seeking Bail?</p>
+                    </span>
+                        <div class="form-check">                            
+                            <input class="form" type="radio" name="SeekingBail" id="BailSeekedYes" value="BailSeekedYes">
+                            <label for="BailSeekedYes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;                      
+                            <input class="form" type="radio" name="SeekingBail" id="BailSeekedNo" value="BailSeekedNo">
+                            <label for="BailSeekedNo">No</label>
+                        </div>              
+                </div>
+                <div class="input-group mb-3 ms-3">              
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        Bail Set At Minimum
+                    </span>
+                    <input type="text" class="position_referrer" aria-label="Bail Minimum Amount" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Location</span>
+                    <input type="text" class="phone_referrer" aria-label="Bail Location" aria-describedby="inputGroup-sizing-default">
+                </div> 
+                <div class="input-group mb-3 ms-3">               
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <p>Type</p>
+                    </span>
+                        <div class="form-check">                            
+                            <input class="form" type="radio" name="BailType" id="BailTypeCriminal" value="BailTypeCriminal">
+                            <label for="BailTypeCriminal">Criminal</label>&nbsp;&nbsp;&nbsp;&nbsp;                      
+                            <input class="form" type="radio" name="BailType" id="BailTypeFamily" value="BailTypeFamily">
+                            <label for="BailTypeFamily">Family</label>
+                        </div>              
+                </div> 
+                <div class="input-group mb-3 ms-3">               
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <p>Order Upon Release:</p>
+                    </span>
+                        <div class="form-check">                            
+                            <input class="form" type="radio" name="OrderUponRelease" id="OrderUponReleaseYes" value="OrderUponReleaseYes">
+                            <label for="OrderUponReleaseYes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;                      
+                            <input class="form" type="radio" name="OrderUponRelease" id="OrderUponReleaseNo" value="OrderUponReleaseNo">
+                            <label for="OrderUponReleaseNo">No</label>
+                        </div>              
+                </div>                       
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Type of Order</span>
+                    <input type="text" class="typeOfOrder" aria-label="TypeOfOrder" aria-describedby="inputGroup-sizing-default">
+                </div> 
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Community Corrections/JJ Office:</span>
+                    <input type="text" class="commCorrectOrJjOffice" aria-label="Community Corrections / JJ Office" aria-describedby="inputGroup-sizing-default">
+                </div> 
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Name of Officer Incharge:</span>
+                    <input type="text" class="nameOfficerIncharge" aria-label="Officer Incharge Name" aria-describedby="inputGroup-sizing-default">
+                </div> 
+                <div class="form-floating mb-3 ms-3">                    
+                    <textarea class="form-control" name="bailConditions" placeholder="bailConditions" id="bailConditions"></textarea>  
+                    <label for="bailConditions">Bail Conditions (If Applicable):</label>                  
+                  </div>
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="lawyerDetails" placeholder="lawyerDetails" id="lawyerDetails"></textarea> 
+                    <label for="lawyerDetails">Lawyer Details:</label>                   
+                </div>                      
+            </div>
             <!-- section_6_end -->
             <!-- section_7_start -->
-
+            <h4>Section 7 - Risk Factors</h4>
+            <div class="section7 ms-3 mb-3"> 
+                <div class="input-group mb-3 ms-3">               
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <p>Are there any risks we should be aware of? (e.g. risks to staff or the community - ADVO) </p>
+                    </span>
+                        <div class="form-check">                            
+                            <input class="form" type="radio" name="OrderUponRelease" id="OrderUponReleaseYes" value="OrderUponReleaseYes">
+                            <label for="OrderUponReleaseYes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;                      
+                            <input class="form" type="radio" name="OrderUponRelease" id="OrderUponReleaseNo" value="OrderUponReleaseNo">
+                            <label for="OrderUponReleaseNo">No</label>
+                        </div>              
+                </div> 
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="riskDetails" placeholder="riskDetails" id="riskDetails"></textarea> 
+                    <label for="riskDetails">If yes, please provide the details of risks present:</label>                   
+                </div>             
+            </div>             
             <!-- section_7_end -->
             <!-- section_8_start -->
-
+            <h4>Section 8 - Agency Support</h4>
+            <div class="section8 ms-3 mb-3"> 
+                <div class="input-group mb-3 ms-3">               
+                    <span class="input-group-text" id="inputGroup-sizing-default">
+                        <p>Are There Any Other Agencies Involved? </p>
+                    </span>
+                        <div class="form-check">                            
+                            <input class="form" type="radio" name="OtherAgencies" id="OtherAgenciesYes" value="OtherAgenciesYes">
+                            <label for="OtherAgenciesYes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;                      
+                            <input class="form" type="radio" name="OtherAgencies" id="OtherAgenciesNo" value="OtherAgenciesNo">
+                            <label for="OtherAgenciesNo">No</label>
+                        </div>              
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">How Many Agencies Are Involved? (Enter a number):</span>
+                    <input type="text" class="agencyName" aria-label="Agency Name" aria-describedby="inputGroup-sizing-default">
+                </div>                
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="agenciesInvolved" placeholder="lawyerDetails" id="agenciesInvolved"></textarea> 
+                    <label for="agenciesInvolved">Record the name/names of the Agency/Agencies, Key Worker/s and Contact Detail/s here:</label>                   
+                </div>                
+            </div>
             <!-- section_8_end -->
             <!-- section_9_start -->
-
+            <h4>Section 9 - Other Information</h4>
+            <div class="section8 ms-3 mb-3"> 
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="agenciesInvolved" placeholder="lawyerDetails" id="agenciesInvolved"></textarea> 
+                    <label for="agenciesInvolved">Enter any other relevant information here:</label>                   
+                </div> 
+            </div>
             <!-- section_9_end -->
             <!-- section_10_start -->
-
+            <h4>Section 10 - Other Information</h4>
+            <div class="section8 ms-3 mb-3"> 
+                <div class="mb-3 ms-3">
+                    <label for="formFileMultiple" class="form-label">Select Attachments Files to Upload</label>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple>
+                </div>
+            </div>
             <!-- section_10_end -->
             <!-- section_11_start -->
+            <h4>Section 11 - OFFICE USE ONLY - Intake Outcome</h4>
+            <div class="section8 ms-3 mb-3">                
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date and Time of Processing Form:</span>
+                    <input type="datetime-local" class="datetimeIntakeOutcome" id="datetimeIntakeOutcome" aria-label="Date and Time of Intake Outcome" aria-describedby="inputGroup-sizing-default">
+                </div>         
+                <div class="form-check mb-3 ms-3">
+                    <label>Client Rating:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="clientRating" id="clientRatingUrgent" value="urgentRatingClient">
+                    <label for="clientRatingUrgent">Urgent</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="clientRating" id="clientRatingHigh" value="highRatingClient">
+                    <label for="clientRatingHigh">High</label>&nbsp;&nbsp;&nbsp;&nbsp;
 
+                    <input class="form" type="radio" name="clientRating" id="clientRatingMedium" value="mediumRatingClient">
+                    <label for="clientRatingMedium">Medium</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="clientRating" id="clientRatingLow" value="lowRatingClient">
+                    <label for="clientRatingLow">Low</label>
+                </div>
+                <hr>
+                <div class="form-check mb-3 ms-3">
+                    <label>Previous Client?</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="previousClient" id="previousClientYes" value="previousClientYes">
+                    <label for="clientRatingUrgent">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="previousClient" id="previousClientNo" value="previousClientNo">
+                    <label for="clientRatingHigh">No</label>                   
+                </div>
+                <div class="form-check mb-3 ms-3">
+                    <label>Meets Eligibility Criteria:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="previousClient" id="previousClientYes" value="previousClientYes">
+                    <label for="clientRatingUrgent">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="previousClient" id="previousClientNo" value="previousClientNo">
+                    <label for="clientRatingHigh">No</label>                   
+                </div>
+                <div class="form-check mb-3 ms-3">
+                    <label>In Catchment Area:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="previousClient" id="previousClientYes" value="previousClientYes">
+                    <label for="clientRatingUrgent">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="previousClient" id="previousClientNo" value="previousClientNo">
+                    <label for="clientRatingHigh">No</label>                   
+                </div>
+                <hr>
+                <div class="form-check mb-3 ms-3">
+                    <label>Accepted:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="clientAccepted" id="clientAcceptedYes" value="clientAcceptedYes">
+                    <label for="clientAccepted">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="clientAccepted" id="clientAcceptedNo" value="clientAcceptedNo">
+                    <label for="clientAccepted">No</label>                   
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Allocated To:</span>
+                    <input type="text" class="datetimeIntakeOutcome" aria-label="Date and Time of Intake Outcome" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="input-group mb-3 ms-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Date and Time of Allocation:</span>
+                    <input type="datetime-local" class="datetimeIntakeOutcome" aria-label="Date and Time of Intake Outcome" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsAccommodation" id="supportNeedsAccommodation" value="supportNeedsAccommodation">
+                    <label for="supportNeedsAccommodation">Followed up with the Referrer to advise on outcome</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsConnection" id="supportNeedsConnection" value="supportNeedsConnection">
+                    <label for="supportNeedsConnection">Nominated person notified and given further information/advice</label>                    
+                </div>
+                <hr>
+                <div class="form-check mb-3 ms-3">
+                    <label>Not Accepted:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input class="form" type="radio" name="notAcceptedClient" id="notAcceptedClientYes" value="notAcceptedClientYes">
+                    <label for="notAcceptedClientYes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="radio" name="notAcceptedClient" id="notAcceptedClientNo" value="notAcceptedClientNo">
+                    <label for="notAcceptedClientNo">No</label>                   
+                </div>
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="notAcceptedClientReasons" placeholder="notAccepted" id="notAcceptedClientReasons"></textarea> 
+                    <label for="notAcceptedClientReasons">If No, Why?</label>                   
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form" type="checkbox" name="supportNeedsAccommodation" id="supportNeedsAccommodation" value="supportNeedsAccommodation">
+                    <label for="supportNeedsAccommodation">Followed up with the Referrer to advise on outcome</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  
+                    <input class="form" type="checkbox" name="supportNeedsConnection" id="supportNeedsConnection" value="supportNeedsConnection">
+                    <label for="supportNeedsConnection">Nominated person notified and given further information/advice</label>                    
+                </div> 
+                <div class="form-floating mb-3 ms-3 ">                                        
+                    <textarea class="form-control" name="notAcceptedClientReasons" placeholder="notAccepted" id="notAcceptedClientReasons"></textarea> 
+                    <label for="notAcceptedClientReasons">Further Information If Required:</label>                   
+                </div> 
+            </div>
             <!-- section_11_end -->
-
         </form>
-    </main>
-    <footer>
-
-    </footer>
+        <footer>
+            <p style="margin-left:10rem; font-weight: bold;">Please Note: Completing this form does not indicate acceptance of referral and placement on program/s.</p>
+        </footer> 
+    </main>    
 </body>
+
 </html>

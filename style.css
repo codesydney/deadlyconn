@@ -419,5 +419,9 @@ form.sign-in-form {
 }
 h4, h3, h5 {
   text-align:center;
-  margin-bottom:2rem;
+  
+
+}
+.referral_form_main > form > h4 {
+  margin: 1em;
 }
