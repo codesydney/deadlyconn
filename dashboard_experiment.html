@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="text-center" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>deadlyconn_dashboard</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">    
+    <link rel="stylesheet" href="assets/css/Article-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+</head>
+
+<body style="font-size: 19px;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+        <div class="container"><img src="assets/img/DC_Logo_No_Title.png" width="100" height="100"><a class="navbar-brand" href="index.html" style="font-size: 26px;">Referral Management System</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav mr-auto"></ul><span class="navbar-text actions"> <a class="login" href="index.html">Log In</a><a class="btn btn-light action-button" role="button" href="index.html" style="background: var(--gray-dark);">Sign Up</a></span>
+            </div>
+        </div>
+    </nav>
+    <header class="header-dark">
+        <div class="container hero">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="text-center">List of Referrals</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <p></p>
+    <section class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="table-responsive">
+
+                        <table id="tableSwapi" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Referrer Agency</th>
+                                    <th>Date of Submission</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-list"></tbody>
+                        </table>    
+
+                    </div>
+                    <!-- <div class="table-responsive">
+                        <div id="tableSwapi_wrapper" class="dataTables_wrapper no-footer">
+                            <div class="dataTables_length" id="tableSwapi_length">
+                                <label>
+                                    Show 
+                                    <select name="tableSwapi_length" aria-controls="table Swapi" class>
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                     entries
+                                </label>
+                            </div>
+                                <div id="tableSwapi_filter" class="dataTables_filter">
+                                    <label>
+                                        Search:
+                                        <input type="search" class placeholder aria-controls="tableSwapi">
+                                    </label>
+                                </div>
+                                <table id="tableSwapi" class="table table-striped dataTable no-footer" role="grid" aria-describedby="tableSwapi_info" style="width: 1113px;">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Referrer Agency</th>
+                                            <th>Date of Submission</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="list-list"></tbody>
+                                </table>    
+                            </div>
+                        </div> -->
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-basic">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html">Login</a></li>
+            <li class="list-inline-item"><a href="index.html">Signup</a></li>
+        </ul>
+        <p class="copyright">Handcoded with&nbsp;<i class="fa fa-heart"></i>&nbsp;by Code.Sydney</p>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>        
+        // $(document).ready(function () {
+        //     $.ajax({
+        //         url: 'https://60950ddf94009e00176b65e5.mockapi.io/api/v1/referrals',
+        //         method: 'get',
+        //         dataType: 'json',
+        //         success: function (data){
+        //         $('#tableSwapi').DataTable( {
+        //                 "order": [[ 0, "asc" ]],
+        //                 data: data,                         
+        //                 columns: [
+        //                     {"data": "id" },
+        //                     {"data": "name" },
+        //                     {"data": "referrerAgency" },
+        //                     {"data": "createdAt" },
+        //                     {"data": "status" }                            
+        //                 ]
+        //                }); 
+        //             }
+        //         });
+        // })
+        const xhr = new XMLHttpRequest();
+        const url = 'https://60950ddf94009e00176b65e5.mockapi.io/api/v1/referrals';
+        xhr.responseType = 'json';
+        xhr.onload = () => {
+            const myDataObj = xhr.response;
+           
+            tableData(myDataObj);
+            console.log(myDataObj);
+
+        };
+        xhr.open('GET', url, true);
+        xhr.send();
+        function tableData(dataObj){
+            let tableData = "";
+            //console.log(dataObj.length);
+            for(let i=0; i< dataObj.length; i++){
+                tableData += "<tr><td>" + dataObj[i].id + "</td><td>" + dataObj[i].name + "</td><td>" + dataObj[i].referrerAgency + "</td><td>" +dataObj[i].createdAt + "</td><td>" + dataObj[i].status + "</td></tr>";
+            }
+            //console.log(tableData);
+            document.getElementById("list-list").innerHTML = tableData;  
+        }
+    </script>
+</body>
+</html>
