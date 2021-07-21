@@ -33,37 +33,45 @@
          <h2 style="margin-left:35%;margin-bottom:2%;">Referral Form</h2> 
     </header>
     <main class="referral_form_main ms-3">
-        <form class="referral_form" action="#" method="POST">
+        <form class="referral_form" id="referralForm">
             <!-- section_1_start -->            
             <h4>Section 1 - Program Referral</h4>
             <div class="section1 ms-2 mb-3">
                   <div class="form-check mt-3">
-                    <input class="form" type="radio" name="referredProgram" id="deadlyFamilies" value="deadlyFamilies">
-                    <label for="deadlyFamilies">Deadly Families</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                  
-                    <input class="form" type="radio" name="referredProgram" id="deadlyJargums" value="deadlyJargums">
-                    <label for="deadlyJargums">Deadly Jargums</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                  
-                    <input class="form" type="radio" name="referredProgram" id="streetSmartProject" value="streetSmartProject">
-                    <label class="form-check-label" for="streetSmartProject">Street Smart Project</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                  
-                    <input class="form" type="radio" name="referredProgram" id="breakingTheCycle" value="breakingTheCycle">
-                    <label class="form-check-label" for="breakingTheCycle">Breaking The Cycle</label>
+                      <span>
+                        <input class="form" type="radio" name="referredProg" id="deadlyFamilies" value="deadlyFamilies">
+                        <label for="deadlyFamilies">Deadly Families</label>
+                      </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span>
+                        <input class="form" type="radio" name="referredProg" id="deadlyJargums" value="deadlyJargums">
+                        <label for="deadlyJargums">Deadly Jargums</label>
+                      </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span>
+                        <input class="form" type="radio" name="referredProg" id="streetSmartProject" value="streetSmartProject">
+                        <label class="form-check-label" for="streetSmartProject">Street Smart Project</label>
+                      </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                      <span>
+                        <input class="form" type="radio" name="referredProg" id="breakingTheCycle" value="breakingTheCycle">
+                        <label class="form-check-label" for="breakingTheCycle">Breaking The Cycle</label>
+                      </span>                    
                   </div>
                   <hr>
                   <p style="margin-left:1.5rem;">Other Type: </p>
                  
                   <div class="form-check mt-3">
-                    <input class="form" type="radio" name="information" id="referral">
+                    <input class="form" type="checkbox" name="information" id="information">
                     <label for="referral">Information</label>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <input class="form" type="radio" name="referral" id="referral">
+                    <input class="form" type="checkbox" name="referral" id="referral">
                     <label for="referral">Referral</label>&nbsp;&nbsp;&nbsp;&nbsp;
                   
-                    <input class="form" type="radio" name="advocacy" id="advocacy">
+                    <input class="form" type="checkbox" name="advocacy" id="advocacy">
                     <label for="advocacy">Advocacy</label>&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <input class="form" type="radio" name="oneOfSupport" id="oneOfSupport">
+                    <input class="form" type="checkbox" name="oneOfSupport" id="oneOfSupport">
                     <label for="oneOfSupport">One Off Support</label>
                   </div>                  
                   <div class="form-floating mb-3">                    
@@ -493,14 +501,32 @@
                 </div> 
             </div>
             <!-- section_11_end -->
-            <div class="form-floating mb-3 ms-3" style="padding:1rem"><p><button type="submit" id="submit"style="padding:0.5rem; font-weight: bold; background:gray; width:10rem; " >SUBMIT</button></p></div>
+            <div class="form-floating mb-3 ms-3" style="padding:1rem"><p><button type="submit" id="submit" style="padding:0.5rem; font-weight: bold; background:gray; width:10rem; " >SUBMIT</button></p></div>
         </form>
         <footer>
             <p style="margin-left:10rem; font-weight: bold;">Please Note: Completing this form does not indicate acceptance of referral and placement on program/s.</p>
             <p class="copyright">Copyright Protected - Created by Code.Sydney for Deadly Connection</p>
         </footer> 
     </main> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>   
+    
+    <script src="assets/js/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+    
+    $.ajax({
+    url: "https://reqres.in/api/users",
+    type: "POST",
+    data: {
+        name: "paul rudd",
+        movies: ["I Love You Man", "Role Models"]
+    },
+    success: function(response){
+        console.log(response);
+    }
+});
+    </script>  
 </body>
 
 </html>

@@ -458,3 +458,6 @@ h4, h3, h5 {
 textarea {
   font-size: medium;
 }
+input {
+  border-color:1px solid rgb(124, 118, 236);
+}
