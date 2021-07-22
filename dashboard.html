@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="assets/css/Article-Clean.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 </head>
 
 <body style="font-size: 19px;">
@@ -39,7 +41,7 @@
                 <div class="col">
                     <div class="table-responsive">
 
-                        <table id="tableSwapi" class="table table-striped">
+                        <table id="tableSwapi" class="display" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -50,6 +52,15 @@
                                 </tr>
                             </thead>
                             <tbody id="list-list"></tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Referrer Agency</th>
+                                    <th>Date of Submission</th>
+                                    <th>Status</th>
+                                </tr>
+                            </tfoot>
                         </table>    
 
                     </div>
@@ -65,10 +76,10 @@
         <p class="copyright">Handcoded with&nbsp;<i class="fa fa-heart"></i>&nbsp;by Code.Sydney</p>
     </footer>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script>        
         $(document).ready(function () {
             $.ajax({
