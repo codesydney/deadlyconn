@@ -28,12 +28,14 @@ let clientDOB = document.getElementById('clientDOB');
 let clientCultIdent = document.getElementById('clientCultIdent');
 let clientAdd = document.getElementById('clientAdd');
 let clientPhone =document.getElementById('clientPhone');
-let submitBtn = document.getElementById('submitBtn');
+
+    // -- Targets and target areas related --
+
 let targettableArea = document.getElementById('tableRefList');
 let tempRefForm = document.getElementById('referralForm');
 let tempRefList = document.getElementById('refTable');
 let tempTitleButt = document.getElementById('titleAndBut');
-let tempString; //Variable to hold the html string for rendering
+
 
     // -- Section 4 related --
 let childInfoDetails = document.getElementById('childrenDetails');
@@ -205,7 +207,9 @@ for(const followup of followupReferrer){
     }
     else{followUpRef = 'Not followed up with Referrer';}
 }
+ 
 
+ // -- Standalone function to create template literal --
 function createTableHtml(tempNum, tempDate, tempAgency, tempName, clientName, clientPhone){
     let temphtml = `<tr>           
                         <th scope="row">${tempNum}</th>
@@ -214,10 +218,14 @@ function createTableHtml(tempNum, tempDate, tempAgency, tempName, clientName, cl
                         <td>${tempName}</td>
                         <td>${clientName}</td>
                         <td>${clientPhone}</td>
+                        <td><button type="submit" data-id="${tempNum}" data-loaded="true" class="btn btn-primary btn-sm edit_btn"> Click here</button></td>
                     </tr>`;
     return temphtml;
 }
 
+let tempString; //Variable to hold the html string for rendering
+
+// ------------ Start of Class -------------
 class referralFormClass {
     constructor(currFormNum=0){
         this._currFormNum = currFormNum;
@@ -248,7 +256,7 @@ class referralFormClass {
 
     //Adding new referral object to the referral objects array
     addForm(){
-        console.log(`Hi you have reached addform`);
+        //console.log(`Hi you have reached addform method of the class`);
         const tempObject = {};
         let tempFormNum = this.formNumGenerate();               
         tempObject.refformNum = tempFormNum;
@@ -266,11 +274,69 @@ class referralFormClass {
         tempObject.clientcultident = clientCultIdent.value;
         tempObject.clientadd = clientAdd.value;
         tempObject.clientphone = clientPhone.value;
-        console.log(tempObject);
+        //console.log(tempObject);
         this._refArray.push(tempObject);
-        console.log(this._refArray[0].refname);        
+        //console.log(this._refArray[0].refname);        
     }
 
+    loadFormForEdit(){
+        for(let i = 0; i < this._refArray.length; i++){
+            if(this.refArray[i]['refformNum'] === referId){
+                let tempObject3 = this.refArray[i];
+                referralDate.value = tempObject3.refdate;
+                referralName.value = tempObject3.refname;
+                referralAgency.value = tempObject3.refagency;
+                referralPosition.value = tempObject3.refposition;
+                referralPhone.value = tempObject3.refphone;
+                referralEmail.value = tempObject3.refemail;
+                clientConsent.value = tempObject3.clientconsent;
+                clientName.value = tempObject3.clientname;
+                clientDOB.value = tempObject3.clientdob;
+                clientCultIdent.value = tempObject3.clientcultident;
+                clientAdd.value = tempObject3.clientadd;
+                clientPhone.value = tempObject3.clientphone;
+            }
+        }
+    }
+    editForm(id){
+        const tempObject2 = {};
+        let tempLength = this._refArray.length;
+        let tempEditFormNum = id; //The id is dataset-id of the 'Edit/Save' button clicked.
+        tempObject2.refformNum = tempEditFormNum;
+        tempObject2.refdate = referralDate.value;
+        tempObject2.refname = referralName.value;
+        tempObject2.refagency = referralAgency.value;
+        tempObject2.refposition = referralPosition.value;
+        tempObject2.refphone = referralPhone.value;
+        tempObject2.refemail = referralEmail.value;
+        tempObject2.clientconsent = clientConsent.value;
+        tempObject2.clientname = clientName.value;
+        tempObject2.clientdob = clientDOB.value;
+        tempObject2.clientcultident = clientCultIdent.value;
+        tempObject2.clientadd = clientAdd.value;
+        tempObject2.clientphone = clientPhone.value;
+        for(let i = 0; i < tempLength; i++){
+            if(this._refArray[i]['refformNum'] === id){
+                console.log(this._refArray[i]['refformNum']);
+                console.log(id);
+                this._refArray.splice(i, 1, tempObject2);
+            }
+        }
+        //console.log(`The refArray is ${tempObject2}`);
+        console.log(this._refArray);
+    }
+
+    deleteIndivData(id){
+        let tempDelFormNum = id; //The id is the dataset-id of the 'Edit/Save' button clicked to reach the data.
+        for(let i=0; i < this._refArray.length; i++){
+            if(this._refArray[i]['refformNum'] === id){
+                //console.log(`The individual data deleted was ${this._refArray[i]}`);
+                this._refArray.splice(i, 1);
+            }
+        }        
+    }
+
+    //The code for creating the array of data required for the rendering the dashboard list
     createRefList(){
         console.log(this._refArray);
         this._refHtml= []; //To clear the refHtml array
@@ -278,42 +344,45 @@ class referralFormClass {
             //console.log(`The first element is ${this._refArray[0]['refname']}`);
             for(const arrTem of this._refArray){
                 let tempNum = arrTem['refformNum'];
-                console.log(tempNum);
+                //console.log(tempNum);
                 let tempDate = arrTem['refdate'];
-                console.log(tempDate);
+                //console.log(tempDate);
                 let tempAgency = arrTem['refagency'];
                 let tempName = arrTem['refname'];
                 let tempClientName = arrTem['clientname'];
                 let tempClientPhone = arrTem['clientphone'];
                 let temphtml = createTableHtml(tempNum, tempDate, tempAgency, tempName, tempClientName, tempClientPhone);
                
-                console.log(temphtml);
+                //console.log(temphtml);
                 this._refHtml.push(temphtml);
-                console.log(this._refHtml);  
-                //this.renderRefList();          
+                //console.log(this._refHtml);  
+                          
             }       
         }        
     }
 
+    //Rendering of the dashboard list
     renderRefList(){
-        console.log(`you have reached renderRefList`);
+        //console.log(`you have reached renderRefList`);
         tempString = this._refHtml.join('\n');
-        console.log(`this is the ${tempString}`);
-        console.log(tempString);
+        //console.log(`this is the ${tempString}`);
+        //console.log(tempString);
         // let targettableArea = document.getElementById('tableRefList');
         targettableArea.display = "block";
         targettableArea.innerHTML = tempString;
-        console.log(`I am here in the renderRefList`);
+        //console.log(`I am here in the renderRefList`);
     }
 
+    //Saving all the available referral data to the Local Storage
     saveForm(){
         let formJson = JSON.stringify(this._refArray);
         localStorage.setItem("Referrals", formJson);
         let formNumJson = JSON.stringify(this._currFormNum);
         localStorage.setItem("CurrentFormNum", formNumJson);
-        console.log(`Saved the form to the local storage`);
+        //console.log(`Saved the form to the local storage`);
     }
 
+    //Loading of the available referral data from the Local Storage
     loadList(){
         let formJson = localStorage.getItem("Referrals");
         if(formJson){
@@ -325,6 +394,8 @@ class referralFormClass {
         //console.log("I am here");
     }
 }
+//  --------- End of Class ------------
+
 function AddFormExt(){
     referralList.addForm();
     //referralList.renderRefList();
@@ -334,14 +405,61 @@ function AddFormExt(){
     tempTitleButt.style.display = "block";
     referralList.saveForm();
     referralList.renderRefList();
+    tempTitleButt.scrollIntoView();
 }
 
 //The function to display the new Referral Form
 function newReferralForm(){
     
     tempRefForm.style.display = "block";
+    tempRefForm.reset();
     tempRefList.style.display = "none";
     tempTitleButt.style.display = "none";    
+    submitBtn.style.display = "block";
+    editSavBtn.style.display = "none";
+    backButton.style.display = "block";
+    deleteBtn.style.display = "none";
+
+}
+
+//The function to save the edit to the referral data
+function editFormFunc(){
+    referralList.editForm(referId);
+    referralList.createRefList();
+    tempRefForm.style.display = "none";
+    tempRefList.style.display = "block";
+    tempTitleButt.style.display = "block";
+    referralList.saveForm();
+    referralList.renderRefList();
+    tempTitleButt.scrollIntoView();
+}
+
+//The function for resetting the form
+function resetFormFunc(){
+    tempRefForm.reset();
+}
+
+//The function to navigate back
+function navigateBack(){
+    tempRefForm.style.display = "none";
+    tempRefList.style.display = "block";
+    tempTitleButt.style.display = "block";
+    referralList.renderRefList();
+    tempTitleButt.scrollIntoView();
+}
+
+//The function for deleting individual referral data
+function delData(){
+    if(confirm("Do you want to delete it?")){
+        referralList.deleteIndivData(referId);
+        referralList.createRefList();
+        tempRefForm.style.display = "none";
+        tempRefList.style.display = "block";
+        tempTitleButt.style.display = "block";
+        referralList.saveForm();
+        referralList.renderRefList();
+        tempTitleButt.scrollIntoView();
+    }else{ }
 }
 
 //Instantiation of referralFormClass
@@ -350,8 +468,52 @@ referralList.loadList();
 referralList.createRefList();
 referralList.renderRefList();
 
-//Setting up Event Listeners
+//Setting up Event Listeners for the 'Submit' and 'New Referral Form' buttons
+let submitBtn = document.getElementById('submitBtn');
+
 submitBtn.addEventListener('click', AddFormExt);
 submitBtn.addEventListener('click', (e)=>{e.preventDefault();});
 newRefFormButton.addEventListener('click', newReferralForm);
 newRefFormButton.addEventListener('click', (e)=>{e.preventDefault();});
+
+//Setting up Event Listener for the click of the 'Edit' button
+
+let editBtn = document.getElementById('tableRefList');
+let referId; //Variable for storing the Referral Num of the Referral being edited
+editBtn.addEventListener('click', (event)=>{
+    //console.log(event.target.classList);
+    if(event.target.classList.contains('edit_btn')){
+        const targetElem = event.target;
+        //console.log(targetElem);
+        referId = parseInt(targetElem.dataset.id);//Obtaining the dataset id of the button clicked
+        //console.log(referId);
+        newReferralForm();
+        referralList.loadFormForEdit(referId);
+        editSavBtn.style.display = "block";
+        submitBtn.style.display = "none";
+        clearBtn.style.display = "none";
+        deleteBtn.style.display = "block";
+    }    
+});
+
+//Setting up Event Listener for the 'Save' button
+let editSavBtn = document.getElementById('editSaveBtn');
+
+editSavBtn.addEventListener('click', editFormFunc);
+editSavBtn.addEventListener('click', (e)=>{e.preventDefault();});
+
+// Setting up Event Listener for the 'Clear' button
+
+let clearBtn = document.getElementById('clearBtn'); // This is the element for the event one after the present one
+clearBtn.addEventListener('click', resetFormFunc);
+clearBtn.addEventListener('click',(e)=>{e.preventDefault();});
+
+//Setting up Event Listener for the navigation buttons
+let backButton = document.getElementById('backBtn');
+backButton.addEventListener('click', navigateBack);
+backButton.addEventListener('click', (e)=>{e.preventDefault();});
+ 
+//Setting up Event Listener for the delete button
+let deleteBtn = document.getElementById('deleteBtn');
+deleteBtn.addEventListener('click', delData);
+deleteBtn.addEventListener('click', (e)=>{e.preventDefault();});
