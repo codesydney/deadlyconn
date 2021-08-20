@@ -1,5 +1,9 @@
 /* ----Referral List Table related */
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 header {
   
@@ -184,3 +188,20 @@ td {
 .input_form {
   background:rgb(238, 195, 95)
 }
+.clear, .editSave, .finalSubmit .deleteB{
+display:flex;
+justify-content: center;
+align-content:stretch;
+width: 100%;
+}
+
+.navButton {
+  display:flex;
+  justify-content: center;
+  align-content: stretch;
+}
+
+button:focus {
+  outline:none !important;
+}
+button.clicked {outline: none;}

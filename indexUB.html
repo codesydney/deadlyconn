@@ -31,7 +31,7 @@
                   </nav>
                  <div id="titleAndBut" class= "headerTitle">
                      <div><h2>Referral List</h2></div><br>
-                 <button class="newRefBtn" id="newRefFormBtn">Start A New Referral</button>
+                 <button class="btn-sm newRefBtn" id="newRefFormBtn">Start A New Referral</button>
                 </div>
             </header>           
         </button>
@@ -44,7 +44,7 @@
                 <th scope="col">Ref Name</th>
                 <th scope="col">Client Name</th>                        
                 <th scope="col">Client Phone</th>
-                <th scope="col">Edit/Delete</th>
+                <th scope="col">Edit Details </th>
                 </tr>
             </thead>
             <tbody id="tableRefList">
@@ -479,7 +479,7 @@
                 <!-- section_8_end -->
                 <!-- section_9_start -->
                 <h4>Section 9 - Other Information</h4>
-                <div class="section8 ms-3 mb-3 px-3"> 
+                <div class="section9 ms-3 mb-3 px-3"> 
                     <div class="form-floating mt-3 mb-3">                                        
                         <textarea class="form-control" name="otherInfo9" id="otherInfo9"></textarea> 
                         <label for="otherInfo9">Enter any other relevant information here:</label>                   
@@ -497,7 +497,7 @@
                 <!-- section_10_end -->
                 <!-- section_11_start -->
                 <h4>Section 11 - OFFICE USE ONLY - Intake Outcome</h4>
-                <div class="section8 ms-3 mb-3 px-3">                
+                <div class="section11 ms-3 mb-1 px-3">                
                     <div class="input-group mt-2 ">
                         <span class="input-group-text" id="inputGroup-sizing-default">Date and Time of Processing Form:</span>
                         <input type="datetime-local" style="margin-left:0.05rem" class="datetimeIntakeOutcome" id="datetimeIntakeOutcome" aria-label="Date and Time of Intake Outcome" aria-describedby="inputGroup-sizing-default">
@@ -586,19 +586,7 @@
                         <span class="input-group-text" id="inputGroup-sizing-default">Date and Time of Allocation:</span>
                         <input type="datetime-local" id="allocationDateTime" class="datetimeIntakeOutcome" aria-label="Date and Time of Intake Outcome" aria-describedby="inputGroup-sizing-default">
                     </div>                    
-                    <hr>
-                    <!-- <div class="form-check mb-3 ms-3">
-                        <label>Not Accepted:</label>&nbsp;&nbsp;
-                        <span>
-                            <input class="form" type="radio" name="notAcceptedClient" id="notAcceptedClientYes" value="notAcceptedClientYes">
-                            <label for="notAcceptedClientYes">Yes</label>
-                        </span>
-                        &nbsp;&nbsp;
-                        <span>
-                            <input class="form" type="radio" name="notAcceptedClient" id="notAcceptedClientNo" value="notAcceptedClientNo">
-                            <label for="notAcceptedClientNo">No</label>
-                        </span>                                           
-                    </div> -->
+                    <hr>                    
                     <div class="form-floating mb-3">                                        
                         <textarea class="form-control" name="notAcceptedClientReasons" placeholder="notAccepted" id="notAcceptedClientReasons"></textarea> 
                         <label for="notAcceptedClientReasons">If No, Why?</label>                   
@@ -617,9 +605,40 @@
                     </div> 
                 </div>
                 <!-- section_11_end -->
-                <div class="form-floating mb-3 ms-3 px-3" style="padding:1rem"><p><button type="submit" id="submitBtn" class="finalSubmit" style="padding:0.5rem; font-weight: bold; background:gray; width:10rem; " >SUBMIT</button></p></div>
+                <div class="ms-3 mb-2 mt-3 px-1">
+                    <div style="display:flex; flex-direction:row; justify-content:space-around; align-content:center ;">
+                        <button type="button" id="clearBtn" class="btn btn-primary btn-sm clear" style="padding:0.5rem; font-weight: bold; background: gray; width: 10rem; display: block" >
+                            CLEAR
+                        </button>
+                        <button type="button" id="submitBtn" class="btn btn-primary btn-sm finalSubmit" style="padding:0.5rem; font-weight: bold; background:gray; width:10rem; " >
+                            SUBMIT
+                        </button>
+                        
+                    </div>
+                    <div >
+                        
+                    </div>      
+                </div>
+                         
+                <div style="display:flex; flex-direction:row; justify-content:space-around; align-content:flex-end ;">
+                    
+                    <div style='display:flex; flex-direction:row; justify-content:space-evenly; align-content:flex-end;'>
+                        <button type="button" id="editSaveBtn" class="btn btn-primary mb-5 mt-3 btn-md editSave" style="padding:0.5rem; font-weight:bold; background:gray; width:8rem; display:none">
+                            SAVE
+                        </button>
+                        <button type="button" id="backBtn" class="btn btn-primary btn-md mb-5 ms-2 mt-3 backb" style="padding:0.5rem; font-weight:bold; background:gray; color: white; width:8rem;">
+                            BACK
+                        </button> 
+                    </div>
+                    
+                    <button type="button" id="deleteBtn" class="btn btn-primary mb-5 me-1 mt-3 btn-md deleteB" style="padding:0.5rem; font-weight:bold; background:rgb(199, 9, 9); width:8rem; display:none">
+                        DELETE
+                    </button>
+                </div>
                 <p style="margin-left:3rem; font-weight: bold; font-size: small;">Please Note: Completing this form does not indicate acceptance of referral and placement on program/s.</p>
             </form>
+            
+            
             <footer>                
                 <p class="copyright">Copyright Protected - Created by Code.Sydney for Deadly Connection</p>
             </footer> 
