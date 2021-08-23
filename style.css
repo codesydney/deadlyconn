@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
 body, input {
   font-family: "Poppins", sans-serif;
 }
+
 /* Dashboard related */
+
 .container {
   position: relative;
   width: 100%;
-  background-color: #e4af1f;
+  background-color: #FFE18C;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -336,4 +337,3 @@ form.sign-in-form {
     left: 50%;
   }
 }
-
